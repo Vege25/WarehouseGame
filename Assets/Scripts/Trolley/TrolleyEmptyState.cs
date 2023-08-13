@@ -5,6 +5,7 @@ using UnityEngine;
 public class TrolleyEmptyState : TrolleyBaseState
 {
     private PlayerController playerController;
+    private PlayerRayDetection playerRayDetection;
     private Trolley thisTrolley;
     public override void EnterState(TrolleyStateManager trolley)
     {
@@ -16,7 +17,7 @@ public class TrolleyEmptyState : TrolleyBaseState
         if (playerController != null && playerController.isOnTrolleyZone)
         {
             //Check for interact input
-            if (playerController.isInteractPressed && !playerController.isCarryingNow && !playerController.isPushingTrolleyNow && !thisTrolley.isTrolleyPushed)
+            if (playerController.isInteractPressed && playerRayDetection.LayerCheck("Trolley") && !playerController.isCarryingNow && !playerController.isPushingTrolleyNow && !thisTrolley.isTrolleyPushed)
             {
                 thisTrolley.isTrolleyPushed = true;
                 playerController.isPushingTrolleyNow = true;
@@ -36,6 +37,7 @@ public class TrolleyEmptyState : TrolleyBaseState
         if (other.CompareTag("Player"))
         {
             playerController = other.GetComponent<PlayerController>();
+            playerRayDetection = other.GetComponent<PlayerRayDetection>();
             playerController.isOnTrolleyZone = true;
         }
 
@@ -57,6 +59,7 @@ public class TrolleyEmptyState : TrolleyBaseState
         {
             playerController.isOnTrolleyZone = false;
             playerController = null;
+            playerRayDetection = null;
         }
     }
 }

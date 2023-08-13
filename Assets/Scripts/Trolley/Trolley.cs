@@ -5,8 +5,7 @@ using UnityEngine;
 public class Trolley : MonoBehaviour
 {
     public int CurrentTrolleyCapacity;
-
-    [SerializeField] private int _maxTrolleyCapacity;
+    public int MaxTrolleyCapacity;
 
     [SerializeField] private int _palletHallwayLocation, _palletZoneLocation, _palletLocation;
 
@@ -22,8 +21,8 @@ public class Trolley : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        _maxTrolleyCapacity = _itemPositionsOnTrolleyParent.transform.childCount;
-        CurrentTrolleyCapacity = _maxTrolleyCapacity;
+        MaxTrolleyCapacity = _itemPositionsOnTrolleyParent.transform.childCount;
+        CurrentTrolleyCapacity = 0;
     }
 
     // Update is called once per frame

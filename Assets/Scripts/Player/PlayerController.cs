@@ -19,6 +19,7 @@ public class PlayerController : MonoBehaviour
     private CharacterController controller;
     public PlayerInput playerInput;
     [SerializeField] private Animator animator;
+    private PlayerRayDetection playerRayDetection;
 
     int isWalkingHash;
     int isRunningHash;
@@ -50,6 +51,7 @@ public class PlayerController : MonoBehaviour
     {
         playerInput = new PlayerInput();
         controller = GetComponent<CharacterController>();
+        playerRayDetection = GetComponent<PlayerRayDetection>();
         //playerInput = GetComponent<PlayerInput>();
 
         isWalkingHash = Animator.StringToHash("isWalking");

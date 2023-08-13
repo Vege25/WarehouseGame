@@ -661,6 +661,7 @@ GameObject:
   - component: {fileID: 3643061249099313927}
   - component: {fileID: 3643061249099313926}
   - component: {fileID: 3643061249099313924}
+  - component: {fileID: 543450651849549387}
   m_Layer: 0
   m_Name: Construction Player
   m_TagString: Player
@@ -730,7 +731,10 @@ MonoBehaviour:
   danceTimerTime: 10
   currentTimer: 0
   isCarryingNow: 0
+  isPushingTrolleyNow: 0
   isOnPickupZone: 0
+  isOnTrolleyZone: 0
+  itemOnCarry: {fileID: 0}
   itemPos: {fileID: 5476666416887801742}
 --- !u!114 &3643061249099313924
 MonoBehaviour:
@@ -749,6 +753,25 @@ MonoBehaviour:
     m_Bits: 0
   canPush: 0
   strength: 1.1
+--- !u!114 &543450651849549387
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4489993406358232203}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9740b4802121daf438ec7791c1cea643, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CurrentObjectOnRay: {fileID: 0}
+  IsRayDetectionValid: 0
+  detectLayers:
+    serializedVersion: 2
+    m_Bits: 6144
+  raycastStartPos: {fileID: 7168565029795960816}
+  rayDistance: 2.5
 --- !u!1 &5587759458602155067
 GameObject:
   m_ObjectHideFlags: 0

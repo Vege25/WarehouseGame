@@ -3,6 +3,7 @@ using UnityEngine;
 public class PalletFullState : PalletBaseState
 {
     private PlayerController playerController;
+    private PlayerRayDetection playerRayDetection;
     private Pallet thisPallet;
     public override void EnterState(PalletStateManager pallet)
     {
@@ -17,7 +18,7 @@ public class PalletFullState : PalletBaseState
             if(playerController != null)
             {
                 //Check for interact input
-                if (playerController.isInteractPressed && !playerController.isCarryingNow && !playerController.isPushingTrolleyNow)
+                if (playerController.isInteractPressed && playerRayDetection.LayerCheck("Pallet") && !playerController.isCarryingNow && !playerController.isPushingTrolleyNow)
                 {
                     thisPallet.TakeItemFromPallet();
                     playerController.AddItemToHand(thisPallet._givenPalletObject);
@@ -37,6 +38,7 @@ public class PalletFullState : PalletBaseState
         GameObject other = collision.gameObject;
         if (other.CompareTag("Player")){
             playerController = other.GetComponent<PlayerController>();
+            playerRayDetection = other.GetComponent<PlayerRayDetection>();
             playerController.isOnPickupZone = true;
         }
     }
@@ -47,6 +49,7 @@ public class PalletFullState : PalletBaseState
         {
             playerController.isOnPickupZone = false;
             playerController = null;
+            playerRayDetection = null;
         }
     }
 }

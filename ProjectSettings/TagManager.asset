@@ -6,6 +6,8 @@ TagManager:
   tags:
   - CinemachineTarget
   - Vehicle
+  - Pallet
+  - Trolley
   layers:
   - Default
   - TransparentFX
@@ -18,8 +20,8 @@ TagManager:
   - Character
   - Ground
   - Vehicle
-  - 
-  - 
+  - Pallet
+  - Trolley
   - 
   - 
   - 

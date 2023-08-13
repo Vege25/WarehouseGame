@@ -5,6 +5,7 @@ using UnityEngine;
 public class TrolleyFillableState : TrolleyBaseState
 {
     private Trolley thisTrolley;
+    private PlayerRayDetection playerRayDetection;
     private PlayerController playerController;
     public override void EnterState(TrolleyStateManager trolley)
     {
@@ -17,10 +18,18 @@ public class TrolleyFillableState : TrolleyBaseState
     {
         if(playerController != null)
         {
-            if(playerController.isInteractPressed && playerController.isCarryingNow)
+            if(thisTrolley.CurrentTrolleyCapacity < thisTrolley.MaxTrolleyCapacity)
             {
-                thisTrolley.PutItemToTrolley(playerController.itemOnCarry);
-                playerController.RemoveItemFromHand();
+                if (playerController.isInteractPressed && playerRayDetection.LayerCheck("Trolley") && playerController.isCarryingNow)
+                {
+                    thisTrolley.PutItemToTrolley(playerController.itemOnCarry);
+                    playerController.RemoveItemFromHand();
+                }
+            }
+            else
+            {
+                playerController.isOnTrolleyZone = false;
+                trolley.SwitchState(trolley.fullState);
             }
         }
     }
@@ -29,8 +38,8 @@ public class TrolleyFillableState : TrolleyBaseState
         GameObject other = collision.gameObject;
         if (other.CompareTag("Player"))
         {
-            Debug.Log("Player");
             playerController = other.GetComponent<PlayerController>();
+            playerRayDetection = other.GetComponent<PlayerRayDetection>();
             playerController.isOnTrolleyZone = true;
         }
     }
@@ -43,6 +52,7 @@ public class TrolleyFillableState : TrolleyBaseState
             {
                 playerController.isOnTrolleyZone = false;
                 playerController = null;
+                playerRayDetection = null;
             }
         }
     }
