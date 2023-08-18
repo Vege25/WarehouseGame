@@ -32,14 +32,13 @@ public class PlayerRayDetection : MonoBehaviour
         }
     }
 
-    public bool LayerCheck(string layerName)
+    public bool ObjectCheck(GameObject gameObject)
     {
         if (CurrentObjectOnRay == null)
         {
             return false;
         }
-        LayerMask layer = CurrentObjectOnRay.layer;
-        if (layer == LayerMask.NameToLayer(layerName))
+        else if (GameObject.ReferenceEquals(gameObject, CurrentObjectOnRay))
         {
             return true;
         }
@@ -47,6 +46,14 @@ public class PlayerRayDetection : MonoBehaviour
         {
             return false;
         }
-
+        /*LayerMask layer = CurrentObjectOnRay.layer;
+        if (layer == LayerMask.NameToLayer(layerName))
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }*/
     }
 }

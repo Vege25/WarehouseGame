@@ -28,6 +28,7 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField]private bool groundedPlayer;
     [SerializeField]private bool isRunPressed;
+    [SerializeField] private bool isDropPressed;
     public bool isInteractPressed;
     [SerializeField]private bool isMovementPressed;
 
@@ -64,6 +65,7 @@ public class PlayerController : MonoBehaviour
         playerInput.CharacterControls.Move.performed += onMovementInput;
         playerInput.CharacterControls.Run.started += ctx => isRunPressed = ctx.ReadValueAsButton();
         playerInput.CharacterControls.Run.canceled += ctx => isRunPressed = ctx.ReadValueAsButton();
+        playerInput.CharacterControls.Drop.started += onDrop;
         playerInput.CharacterControls.Interact.started += onInteract;
         playerInput.CharacterControls.Interact.canceled += onInteract;
     }
@@ -125,14 +127,16 @@ public class PlayerController : MonoBehaviour
     {
         isInteractPressed = ctx.ReadValueAsButton();
         isDancing = false;
-
-
-        if (isCarryingNow && isInteractPressed && !isOnPickupZone && !isOnTrolleyZone)
+    }
+    private void onDrop(InputAction.CallbackContext ctx)
+    {
+        if (isCarryingNow && !isOnPickupZone && !isOnTrolleyZone)
         {
             Debug.Log("Dropped the item");
             DropItem();
         }
     }
+
 
     private void HandleAnimation()
     {
@@ -189,12 +193,21 @@ public class PlayerController : MonoBehaviour
     {
         isCarryingNow = false;
         Destroy(itemPos.GetChild(0).gameObject);
-        Instantiate(itemOnCarry, transform.position, Quaternion.identity, null);
+
+        Vector3 GroundOffset = transform.forward - new Vector3(-0.0f, 0.0f, -0.4f);
+        GameObject newGroundObject = Instantiate(itemOnCarry, transform.position + GroundOffset, transform.rotation, null);
+
+        BoxCollider itemsCollider = newGroundObject.GetComponent<BoxCollider>();
+        if (itemsCollider != null) { itemsCollider.isTrigger = true; }
+
+        newGroundObject.transform.localScale = new Vector3(0.6f, 0.15f, 0.3f);
         itemOnCarry = null;
+        isInteractPressed = false;
     }
 
     public void RemoveItemFromHand()
     {
+        isInteractPressed = false;
         isCarryingNow = false;
         Destroy(itemPos.GetChild(0).gameObject);
         itemOnCarry = null;
@@ -202,7 +215,13 @@ public class PlayerController : MonoBehaviour
 
     public void AddItemToHand(GameObject item)
     {
-        Instantiate(item, itemPos.position, itemPos.rotation, itemPos);
+        isInteractPressed = false;
+        GameObject itemInHand = Instantiate(item, itemPos.position, itemPos.rotation, itemPos);
+        BoxCollider itemsCollider = itemInHand.GetComponent<BoxCollider>();
+        if (itemsCollider != null)
+        {
+            itemsCollider.enabled = false;
+        }
     }
 
     private void StartDanceCountDown()

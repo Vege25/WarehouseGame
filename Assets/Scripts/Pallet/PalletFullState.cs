@@ -18,7 +18,7 @@ public class PalletFullState : PalletBaseState
             if(playerController != null)
             {
                 //Check for interact input
-                if (playerController.isInteractPressed && playerRayDetection.LayerCheck("Pallet") && !playerController.isCarryingNow && !playerController.isPushingTrolleyNow)
+                if (playerController.isInteractPressed && playerRayDetection.ObjectCheck(thisPallet.gameObject) && !playerController.isCarryingNow && !playerController.isPushingTrolleyNow)
                 {
                     thisPallet.TakeItemFromPallet();
                     playerController.AddItemToHand(thisPallet._givenPalletObject);

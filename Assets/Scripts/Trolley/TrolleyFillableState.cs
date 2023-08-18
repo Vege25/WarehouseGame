@@ -20,10 +20,9 @@ public class TrolleyFillableState : TrolleyBaseState
         {
             if(thisTrolley.CurrentTrolleyCapacity < thisTrolley.MaxTrolleyCapacity)
             {
-                if (playerController.isInteractPressed && playerRayDetection.LayerCheck("Trolley") && playerController.isCarryingNow)
+                if (playerController.isInteractPressed && playerRayDetection.ObjectCheck(thisTrolley.gameObject) && playerController.isCarryingNow)
                 {
-                    thisTrolley.PutItemToTrolley(playerController.itemOnCarry);
-                    playerController.RemoveItemFromHand();
+                    thisTrolley.PutItemToTrolley(playerController.itemOnCarry, playerController);
                 }
             }
             else

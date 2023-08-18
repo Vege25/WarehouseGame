@@ -6,7 +6,13 @@ using UnityEngine;
 
 public class VehicleController : MonoBehaviour
 {
-    public PlayerInput playerInput;
+    public int maxTrolleysAmount;
+    public int currentTrolleysAttached;
+    public bool isOnVehicleZone;
+
+    [SerializeField] GameObject trolleysHolder;
+
+    private PlayerInput playerInput;
 
     [SerializeField] private bool isMovementPressed;
 
@@ -23,6 +29,11 @@ public class VehicleController : MonoBehaviour
         playerInput.VehicleControls.Move.performed += onMovementInput;
     }
 
+    private void Start()
+    {
+        maxTrolleysAmount = trolleysHolder.transform.childCount;
+    }
+
     private void onMovementInput(InputAction.CallbackContext ctx)
     {
         currentMovementInput = ctx.ReadValue<Vector2>();
@@ -31,10 +42,14 @@ public class VehicleController : MonoBehaviour
         isMovementPressed = currentMovementInput.x != 0 || currentMovementInput.y != 0;
     }
 
-    // Update is called once per frame
-    void Update()
+    public void AttachTrolleyToVehicle(GameObject trolley)
     {
+        Transform nextTrolleyPosChild = trolleysHolder.transform.GetChild(currentTrolleysAttached);
 
+        trolley.transform.position = nextTrolleyPosChild.transform.position;
+        trolley.transform.rotation = Quaternion.identity;
+
+        currentTrolleysAttached++;
     }
 
     private void OnEnable()

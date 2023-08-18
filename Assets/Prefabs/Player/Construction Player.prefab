@@ -471,7 +471,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3886826822352136801}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.611, z: 0.85}
+  m_LocalPosition: {x: 0, y: 0.611, z: 0.95}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -700,7 +700,7 @@ CharacterController:
   m_Enabled: 1
   serializedVersion: 2
   m_Height: 1.5
-  m_Radius: 0.5
+  m_Radius: 0.4
   m_SlopeLimit: 45
   m_StepOffset: 0.3
   m_SkinWidth: 0.08
@@ -726,6 +726,7 @@ MonoBehaviour:
   animator: {fileID: 3643061247971860432}
   groundedPlayer: 0
   isRunPressed: 0
+  isDropPressed: 0
   isInteractPressed: 0
   isMovementPressed: 0
   danceTimerTime: 10
