@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1291667667}
   - component: {fileID: 1291667669}
   - component: {fileID: 1291667668}
-  m_Layer: 12
+  m_Layer: 0
   m_Name: LeftSide
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -45,7 +45,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.597407, y: 3.5, z: 1.25}
+  m_Size: {x: 1.597407, y: 3.5, z: 0.6}
   m_Center: {x: -0.17370483, y: 0, z: 0}
 --- !u!114 &1291667668
 MonoBehaviour:
@@ -72,7 +72,7 @@ GameObject:
   - component: {fileID: 1453622131}
   - component: {fileID: 1453622133}
   - component: {fileID: 1453622132}
-  m_Layer: 12
+  m_Layer: 0
   m_Name: RightSide
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -106,7 +106,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.6163039, y: 3.5, z: 1.25}
+  m_Size: {x: 1.6163039, y: 3.5, z: 0.6}
   m_Center: {x: 0.18315217, y: 0, z: 0}
 --- !u!114 &1453622132
 MonoBehaviour:
@@ -131,7 +131,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1712520243}
-  m_Layer: 12
+  m_Layer: 0
   m_Name: SideCollidersParent
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -164,7 +164,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 361438465370205855}
-  m_Layer: 12
+  m_Layer: 0
   m_Name: Position (13)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -195,7 +195,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3564715871775566160}
-  m_Layer: 12
+  m_Layer: 0
   m_Name: Position (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -226,7 +226,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1209126796043681930}
-  m_Layer: 12
+  m_Layer: 0
   m_Name: Position (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -257,7 +257,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7371717587519620225}
-  m_Layer: 12
+  m_Layer: 0
   m_Name: Position (13)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -288,7 +288,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5076502941373018022}
-  m_Layer: 12
+  m_Layer: 0
   m_Name: Position (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -319,7 +319,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5313456322602187665}
-  m_Layer: 12
+  m_Layer: 0
   m_Name: Position (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -350,7 +350,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4775109739179750882}
-  m_Layer: 12
+  m_Layer: 0
   m_Name: Position (11)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -381,7 +381,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9125406590240503721}
-  m_Layer: 12
+  m_Layer: 0
   m_Name: Position (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -412,7 +412,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1959903284520862840}
-  m_Layer: 12
+  m_Layer: 0
   m_Name: Position (9)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -443,7 +443,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6291201129278478134}
-  m_Layer: 12
+  m_Layer: 0
   m_Name: Position (12)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -474,7 +474,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5713064857524148531}
-  m_Layer: 12
+  m_Layer: 0
   m_Name: ItemPositionsLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -519,7 +519,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3495545087529021046}
-  m_Layer: 12
+  m_Layer: 0
   m_Name: Position (8)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -550,7 +550,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7572822064622733696}
-  m_Layer: 12
+  m_Layer: 0
   m_Name: Position (8)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -581,7 +581,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7566586241140860029}
-  m_Layer: 12
+  m_Layer: 0
   m_Name: Position (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -743,7 +743,7 @@ GameObject:
   - component: {fileID: 4740777561374079675}
   - component: {fileID: 1314346789}
   - component: {fileID: 1314346794}
-  m_Layer: 12
+  m_Layer: 0
   m_Name: Trolley
   m_TagString: Trolley
   m_Icon: {fileID: 0}
@@ -805,6 +805,7 @@ MonoBehaviour:
   _itemsOnTrolley: []
   isTrolleyPushed: 0
   isDropSpotValid: 0
+  cameraPerspectiveController: {fileID: 0}
   trolleyPosOnPlayer: {fileID: 0}
   colliderObject: {fileID: 5362431101823632267}
 --- !u!114 &4740777561374079675
@@ -830,8 +831,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 3.9902556, y: 3.86, z: 1}
-  m_Center: {x: 0.004871975, y: 0, z: 0}
+  m_Size: {x: 4, y: 3.86, z: 0.6}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &1314346794
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -857,7 +858,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6319747167195235917}
-  m_Layer: 12
+  m_Layer: 0
   m_Name: Position (10)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -888,7 +889,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6342221587957598354}
-  m_Layer: 12
+  m_Layer: 0
   m_Name: Position (10)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -919,7 +920,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6114480692049630050}
-  m_Layer: 12
+  m_Layer: 0
   m_Name: Position (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -950,7 +951,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8450507410394225366}
-  m_Layer: 12
+  m_Layer: 0
   m_Name: Position (14)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -981,7 +982,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4557437971828253146}
-  m_Layer: 12
+  m_Layer: 0
   m_Name: Position (9)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1012,7 +1013,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6090448513457564372}
-  m_Layer: 12
+  m_Layer: 0
   m_Name: Position (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1043,7 +1044,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5715644655068275290}
-  m_Layer: 12
+  m_Layer: 0
   m_Name: Position (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1074,7 +1075,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8545210847050021113}
-  m_Layer: 12
+  m_Layer: 0
   m_Name: Position (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1105,7 +1106,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6572662200485977437}
-  m_Layer: 12
+  m_Layer: 0
   m_Name: Position (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1136,7 +1137,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4291931908885571051}
-  m_Layer: 12
+  m_Layer: 0
   m_Name: Position (14)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1167,7 +1168,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1253490624299387402}
-  m_Layer: 12
+  m_Layer: 0
   m_Name: Position (11)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1198,7 +1199,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1261151265386824892}
-  m_Layer: 12
+  m_Layer: 0
   m_Name: Position (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1229,7 +1230,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1224051247190284616}
-  m_Layer: 12
+  m_Layer: 0
   m_Name: Position (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1260,7 +1261,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4494974344365355781}
-  m_Layer: 12
+  m_Layer: 0
   m_Name: Position (12)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1291,7 +1292,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2667000755737119226}
-  m_Layer: 12
+  m_Layer: 0
   m_Name: Position (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1322,7 +1323,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7810834154418948754}
-  m_Layer: 12
+  m_Layer: 0
   m_Name: ItemPositionsRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}

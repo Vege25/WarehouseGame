@@ -76,7 +76,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BindingMode: 0
-  m_FollowOffset: {x: 0, y: 5, z: -4}
+  m_FollowOffset: {x: 0, y: 6, z: -3}
   m_XDamping: 3
   m_YDamping: 1
   m_ZDamping: 1
@@ -96,6 +96,7 @@ GameObject:
   - component: {fileID: 7596460902745721752}
   - component: {fileID: 7596460902745721753}
   - component: {fileID: 7596460902745721754}
+  - component: {fileID: 1961406568}
   m_Layer: 0
   m_Name: Cam1 Pickup
   m_TagString: Untagged
@@ -173,3 +174,18 @@ MonoBehaviour:
   AutoEnableInputs: 1
   XYAxis: {fileID: 2969824856005839412, guid: f5b6ddecebe29f646b7415dbbd983762, type: 3}
   ZAxis: {fileID: 0}
+--- !u!114 &1961406568
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7596460902745721755}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31b4b390221dccd419bd3dd4c795c564, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  trolleyRightSideCamera: 0
+  trolleyLeftSideCamera: 0
+  rotationSpeed: 10

@@ -38,7 +38,7 @@ public class TrolleyEmptyState : TrolleyBaseState
         if (vehicleController != null && vehicleController.isOnVehicleZone && vehicleController.currentTrolleysAttached < vehicleController.maxTrolleysAmount)
         {
             Debug.Log("Here");
-            if (playerController.isInteractPressed && thisTrolley.isTrolleyPushed)
+            if (playerController!=null && playerController.isInteractPressed && thisTrolley.isTrolleyPushed)
             {
                 thisTrolley.isTrolleyPushed = false;
                 playerController.isPushingTrolleyNow = false;
@@ -59,6 +59,7 @@ public class TrolleyEmptyState : TrolleyBaseState
             playerController = other.GetComponent<PlayerController>();
             playerRayDetection = other.GetComponent<PlayerRayDetection>();
             playerController.isOnTrolleyZone = true;
+            playerRayDetection.currentItemOnCollider = thisTrolley.gameObject;
         }
         else if (other.CompareTag("Vehicle"))
         {
@@ -84,12 +85,16 @@ public class TrolleyEmptyState : TrolleyBaseState
         GameObject other = collision.gameObject;
         if (other.CompareTag("Player"))
         {
-            if(playerController != null)
+            if(playerRayDetection != null && GameObject.ReferenceEquals(thisTrolley.gameObject, playerRayDetection.currentItemOnCollider))
             {
-                playerController.isOnTrolleyZone = false;
+                if (playerController != null)
+                {
+                    playerController.isOnTrolleyZone = false;
+                }
+                playerRayDetection.currentItemOnCollider = null;
+                playerController = null;
+                playerRayDetection = null;
             }
-            playerController = null;
-            playerRayDetection = null;
         }
         else if (other.CompareTag("Vehicle"))
         {

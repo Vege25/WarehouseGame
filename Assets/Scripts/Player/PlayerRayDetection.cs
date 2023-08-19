@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerRayDetection : MonoBehaviour
 {
     public GameObject CurrentObjectOnRay;
+    public GameObject currentItemOnCollider;
     public bool IsRayDetectionValid;
 
     [SerializeField] LayerMask detectLayers;
@@ -38,7 +39,7 @@ public class PlayerRayDetection : MonoBehaviour
         {
             return false;
         }
-        else if (GameObject.ReferenceEquals(gameObject, CurrentObjectOnRay))
+        else if (GameObject.ReferenceEquals(currentItemOnCollider, CurrentObjectOnRay))
         {
             return true;
         }
@@ -55,5 +56,19 @@ public class PlayerRayDetection : MonoBehaviour
         {
             return false;
         }*/
+    }
+    public bool LayerCheck(string layerName)
+    {
+        if(CurrentObjectOnRay == null) { return false; }
+
+        LayerMask layer = CurrentObjectOnRay.layer;
+        if (layer == LayerMask.NameToLayer(layerName))
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
     }
 }

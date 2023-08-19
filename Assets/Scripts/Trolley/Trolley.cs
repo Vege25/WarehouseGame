@@ -18,6 +18,7 @@ public class Trolley : MonoBehaviour
     public bool isTrolleyPushed;
     public bool isDropSpotValid;
 
+    [SerializeField] CameraPerspectiveController cameraPerspectiveController;
     [SerializeField] private Transform trolleyPosOnPlayer;
     [SerializeField] GameObject colliderObject;
     TrolleySideManager trolleySideManager;
@@ -93,5 +94,28 @@ public class Trolley : MonoBehaviour
             playerController.RemoveItemFromHand();
         }
         
+    }
+
+    public void MoveCameraToSideView(bool isSideViewActivated)
+    {
+        if (!isSideViewActivated) 
+        {
+            cameraPerspectiveController.trolleyRightSideCamera = false;
+            cameraPerspectiveController.trolleyLeftSideCamera = false;
+            return; 
+        }
+
+        if (trolleySideManager.isRightCollider)
+        {
+            Debug.Log("Here2");
+            cameraPerspectiveController.trolleyRightSideCamera = true;
+            cameraPerspectiveController.trolleyLeftSideCamera = false;
+        }
+        else
+        {
+            Debug.Log("Here3");
+            cameraPerspectiveController.trolleyRightSideCamera = false;
+            cameraPerspectiveController.trolleyLeftSideCamera = true;
+        }
     }
 }

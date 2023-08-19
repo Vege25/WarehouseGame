@@ -40,6 +40,7 @@ public class PalletFullState : PalletBaseState
             playerController = other.GetComponent<PlayerController>();
             playerRayDetection = other.GetComponent<PlayerRayDetection>();
             playerController.isOnPickupZone = true;
+            playerRayDetection.currentItemOnCollider = thisPallet.gameObject;
         }
     }
     public override void OnCollisionExit(PalletStateManager pallet, Collider collision)
@@ -47,9 +48,13 @@ public class PalletFullState : PalletBaseState
         GameObject other = collision.gameObject;
         if (other.CompareTag("Player"))
         {
-            playerController.isOnPickupZone = false;
-            playerController = null;
-            playerRayDetection = null;
+            if(playerRayDetection != null && GameObject.ReferenceEquals(thisPallet.gameObject, playerRayDetection.currentItemOnCollider))
+            {
+                playerRayDetection.currentItemOnCollider = null;
+                playerController.isOnPickupZone = false;
+                playerController = null;
+                playerRayDetection = null;
+            }
         }
     }
 }
