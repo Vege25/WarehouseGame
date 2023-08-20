@@ -6,8 +6,6 @@ using UnityEngine.InputSystem;
 public class PlayerController : MonoBehaviour
 {
     [SerializeField]
-    private float jumpHeight = 1.0f;
-    [SerializeField]
     private float gravityValue = -9.81f;
     [SerializeField]
     private float runSpeed = 6.0f;
